@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Metadata].[EquipmentLookupSchedules] (
+    [Id]                          INT            IDENTITY (1, 1) NOT NULL,
+    [Name]                        NVARCHAR (MAX) NULL,
+    [Description]                 NVARCHAR (MAX) NULL,
+    [ScheduleDuration]            INT            NOT NULL,
+    [EquipmentLookupId]           INT            NOT NULL,
+    [MetricsId]                   INT            NOT NULL,
+    [EquipmentScheduleIntervalId] INT            NOT NULL,
+    [EquipmentScheduleTypeId]     INT            NOT NULL,
+    [EquipmentId]                 INT            NULL,
+    [IsDeleted]                   BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsActive]                    BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [CreatedBy]                   INT            NULL,
+    [CreatedOn]                   DATETIME2 (7)  NOT NULL,
+    [UpdatedBy]                   INT            NULL,
+    [UpdatedOn]                   DATETIME2 (7)  NULL,
+    CONSTRAINT [PK_EquipmentLookupSchedules] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_EquipmentLookupSchedules_EquipmentLookups_EquipmentLookupId] FOREIGN KEY ([EquipmentLookupId]) REFERENCES [Metadata].[EquipmentLookups] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_Equipments_EquipmentId] FOREIGN KEY ([EquipmentId]) REFERENCES [Equipment].[Equipments] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_EquipmentScheduleIntervals_EquipmentScheduleIntervalId] FOREIGN KEY ([EquipmentScheduleIntervalId]) REFERENCES [Metadata].[EquipmentScheduleIntervals] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_EquipmentScheduleTypes_EquipmentScheduleTypeId] FOREIGN KEY ([EquipmentScheduleTypeId]) REFERENCES [Metadata].[EquipmentScheduleTypes] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_Metrics_MetricsId] FOREIGN KEY ([MetricsId]) REFERENCES [Metadata].[Metrics] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_Users_CreatedBy] FOREIGN KEY ([CreatedBy]) REFERENCES [Security].[Users] ([Id]),
+    CONSTRAINT [FK_EquipmentLookupSchedules_Users_UpdatedBy] FOREIGN KEY ([UpdatedBy]) REFERENCES [Security].[Users] ([Id])
+);
+

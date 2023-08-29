@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Metadata].[HealthFacilities] (
+    [Id]                   INT             IDENTITY (1, 1) NOT NULL,
+    [Code]                 NVARCHAR (MAX)  NULL,
+    [City]                 NVARCHAR (MAX)  NULL,
+    [Telephone1]           NVARCHAR (MAX)  NULL,
+    [Telephone2]           NVARCHAR (MAX)  NULL,
+    [Address]              NVARCHAR (MAX)  NULL,
+    [Email]                NVARCHAR (MAX)  NULL,
+    [RegionId]             INT             NOT NULL,
+    [HealthFacilityTypeId] INT             NOT NULL,
+    [Name]                 NVARCHAR (MAX)  NULL,
+    [Latitude]             DECIMAL (18, 6) NULL,
+    [Longitude]            DECIMAL (18, 6) NULL,
+    [IsDeleted]            BIT             CONSTRAINT [DF__HealthFac__IsDel__719CDDE7] DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsActive]             BIT             CONSTRAINT [DF__HealthFac__IsAct__72910220] DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [CreatedBy]            INT             NULL,
+    [CreatedOn]            DATETIME2 (7)   NOT NULL,
+    [UpdatedBy]            INT             NULL,
+    [UpdatedOn]            DATETIME2 (7)   NULL,
+    CONSTRAINT [PK_HealthFacilities] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_HealthFacilities_HealthFacilityType_HealthFacilityTypeId] FOREIGN KEY ([HealthFacilityTypeId]) REFERENCES [Metadata].[HealthFacilityType] ([Id]),
+    CONSTRAINT [FK_HealthFacilities_Regions_RegionId] FOREIGN KEY ([RegionId]) REFERENCES [Metadata].[Regions] ([Id]),
+    CONSTRAINT [FK_HealthFacilities_Users_CreatedBy] FOREIGN KEY ([CreatedBy]) REFERENCES [Security].[Users] ([Id]),
+    CONSTRAINT [FK_HealthFacilities_Users_UpdatedBy] FOREIGN KEY ([UpdatedBy]) REFERENCES [Security].[Users] ([Id])
+);
+

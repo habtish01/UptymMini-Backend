@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Maintenance].[WorkOrderHeader] (
+    [Id]                   INT            IDENTITY (1, 1) NOT NULL,
+    [Title]                NVARCHAR (MAX) NULL,
+    [ReportedDate]         DATETIME2 (7)  NOT NULL,
+    [EquipmentFailureDate] DATETIME2 (7)  NOT NULL,
+    [Description]          NVARCHAR (MAX) NULL,
+    [EquipmentId]          INT            NOT NULL,
+    [ReportedById]         INT            NULL,
+    [ErrorCodeId]          INT            NULL,
+    [ProblemTypeId]        INT            NULL,
+    [ReporterPriorityId]   INT            NOT NULL,
+    [WorkorderTypeId]      INT            NOT NULL,
+    [IsClosed]             BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [AutoScheduleId]       INT            NULL,
+    [AutoScheduleStatusId] INT            NULL,
+    [NextScheduleDate]     DATETIME2 (7)  NULL,
+    [ReporterPriority]     INT            NOT NULL,
+    [AutoScheduleStatus]   INT            NOT NULL,
+    [IsDeleted]            BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsActive]             BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [CreatedBy]            INT            NULL,
+    [CreatedOn]            DATETIME2 (7)  NOT NULL,
+    [UpdatedBy]            INT            NULL,
+    [UpdatedOn]            DATETIME2 (7)  NULL,
+    CONSTRAINT [PK_WorkOrderHeader] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

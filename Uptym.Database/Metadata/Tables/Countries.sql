@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Metadata].[Countries] (
+    [Id]              INT             IDENTITY (1, 1) NOT NULL,
+    [ContinentId]     INT             NOT NULL,
+    [CountryPeriodId] INT             NOT NULL,
+    [ShortCode]       NVARCHAR (MAX)  NULL,
+    [ShortName]       NVARCHAR (MAX)  NULL,
+    [NativeName]      NVARCHAR (MAX)  NULL,
+    [Flag]            NVARCHAR (MAX)  NULL,
+    [CurrencyCode]    NVARCHAR (MAX)  NULL,
+    [CallingCode]     NVARCHAR (MAX)  NULL,
+    [Latitude]        NVARCHAR (MAX)  NULL,
+    [Longitude]       NVARCHAR (MAX)  NULL,
+    [Population]      DECIMAL (18, 4) DEFAULT ((0.0)) NOT NULL,
+    [Name]            NVARCHAR (MAX)  NULL,
+    [IsDeleted]       BIT             DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsActive]        BIT             DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [CreatedBy]       INT             NULL,
+    [CreatedOn]       DATETIME2 (7)   NOT NULL,
+    [UpdatedBy]       INT             NULL,
+    [UpdatedOn]       DATETIME2 (7)   NULL,
+    CONSTRAINT [PK_Countries] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Countries_Continents_ContinentId] FOREIGN KEY ([ContinentId]) REFERENCES [Metadata].[Continents] ([Id]),
+    CONSTRAINT [FK_Countries_CountryPeriods_CountryPeriodId] FOREIGN KEY ([CountryPeriodId]) REFERENCES [Metadata].[CountryPeriods] ([Id]),
+    CONSTRAINT [FK_Countries_Users_CreatedBy] FOREIGN KEY ([CreatedBy]) REFERENCES [Security].[Users] ([Id]),
+    CONSTRAINT [FK_Countries_Users_UpdatedBy] FOREIGN KEY ([UpdatedBy]) REFERENCES [Security].[Users] ([Id])
+);
+

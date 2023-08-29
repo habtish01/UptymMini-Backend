@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym", "Uptym\Uptym.csproj", "{EF1D94D2-CEFA-489F-90B4-DAA530A2B715}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.Core", "Uptym.Core\Uptym.Core.csproj", "{060AAA2F-0026-484C-AC51-CF0AF0243745}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.Services", "Uptym.Services\Uptym.Services.csproj", "{F3431D1C-21AF-49DC-8DAA-65886FC25F3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.DTO", "Uptym.DTO\Uptym.DTO.csproj", "{8846F0CD-46E8-4AB0-AF0F-D578A359C740}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.Repositories", "Uptym.Repositories\Uptym.Repositories.csproj", "{F0211E15-5FC8-499B-B82A-48C46E6FC7B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.Data", "Uptym.Data\Uptym.Data.csproj", "{172A2B15-875D-49B1-A355-DE4E516A5E73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uptym.Validators", "Uptym.Validators\Uptym.Validators.csproj", "{63C7F675-6ABB-4EB5-B2FC-B7C0539E1BD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF1D94D2-CEFA-489F-90B4-DAA530A2B715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1D94D2-CEFA-489F-90B4-DAA530A2B715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1D94D2-CEFA-489F-90B4-DAA530A2B715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1D94D2-CEFA-489F-90B4-DAA530A2B715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060AAA2F-0026-484C-AC51-CF0AF0243745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060AAA2F-0026-484C-AC51-CF0AF0243745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060AAA2F-0026-484C-AC51-CF0AF0243745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060AAA2F-0026-484C-AC51-CF0AF0243745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3431D1C-21AF-49DC-8DAA-65886FC25F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3431D1C-21AF-49DC-8DAA-65886FC25F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3431D1C-21AF-49DC-8DAA-65886FC25F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3431D1C-21AF-49DC-8DAA-65886FC25F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8846F0CD-46E8-4AB0-AF0F-D578A359C740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8846F0CD-46E8-4AB0-AF0F-D578A359C740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8846F0CD-46E8-4AB0-AF0F-D578A359C740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8846F0CD-46E8-4AB0-AF0F-D578A359C740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0211E15-5FC8-499B-B82A-48C46E6FC7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0211E15-5FC8-499B-B82A-48C46E6FC7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0211E15-5FC8-499B-B82A-48C46E6FC7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0211E15-5FC8-499B-B82A-48C46E6FC7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172A2B15-875D-49B1-A355-DE4E516A5E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172A2B15-875D-49B1-A355-DE4E516A5E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172A2B15-875D-49B1-A355-DE4E516A5E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172A2B15-875D-49B1-A355-DE4E516A5E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C7F675-6ABB-4EB5-B2FC-B7C0539E1BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C7F675-6ABB-4EB5-B2FC-B7C0539E1BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C7F675-6ABB-4EB5-B2FC-B7C0539E1BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C7F675-6ABB-4EB5-B2FC-B7C0539E1BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF47F5AC-95D3-4255-BCBD-40B212877014}
+	EndGlobalSection
+EndGlobal

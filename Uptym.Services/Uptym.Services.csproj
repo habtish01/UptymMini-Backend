@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Metadata\MaintenanceCheckList\**" />
+    <EmbeddedResource Remove="Metadata\MaintenanceCheckList\**" />
+    <None Remove="Metadata\MaintenanceCheckList\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Metadata\MaintenanceCheckList\IMaintenanceCheckListService.cs" />
+    <Compile Include="Metadata\MaintenanceCheckList\MaintenanceCheckListService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="EntityFrameworkCore.Triggers" Version="1.2.2" />
+    <PackageReference Include="JsonModelBinder" Version="2.1.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+    <PackageReference Include="NPOI" Version="2.5.1" />
+    <PackageReference Include="Quartz" Version="3.2.3" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.5" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
+    <PackageReference Include="Twilio" Version="5.53.0" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.37.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Uptym.Core\Uptym.Core.csproj" />
+    <ProjectReference Include="..\Uptym.Data\Uptym.Data.csproj" />
+    <ProjectReference Include="..\Uptym.DTO\Uptym.DTO.csproj" />
+    <ProjectReference Include="..\Uptym.Repositories\Uptym.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

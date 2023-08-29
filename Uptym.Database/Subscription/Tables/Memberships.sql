@@ -1,0 +1,26 @@
+﻿CREATE TABLE [Subscription].[Memberships] (
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
+    [PlanId]         INT            NOT NULL,
+    [BillingId]      INT            NULL,
+    [CustomerId]     INT            NOT NULL,
+    [Status]         NVARCHAR (MAX) NULL,
+    [StartDate]      DATETIME2 (7)  NOT NULL,
+    [EndDate]        DATETIME2 (7)  NOT NULL,
+    [ExtraEndDate]   DATETIME2 (7)  NOT NULL,
+    [AutoActive]     BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsDeleted]      BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [IsActive]       BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [CreatedBy]      INT            NULL,
+    [CreatedOn]      DATETIME2 (7)  NOT NULL,
+    [UpdatedBy]      INT            NULL,
+    [UpdatedOn]      DATETIME2 (7)  NULL,
+    [ReminderOn]     DATETIME2 (7)  DEFAULT ('0001-01-01T00:00:00.0000000') NOT NULL,
+    [ReminderStatus] BIT            DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    CONSTRAINT [PK_Memberships] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Memberships_Billings_BillingId] FOREIGN KEY ([BillingId]) REFERENCES [Subscription].[Billings] ([Id]),
+    CONSTRAINT [FK_Memberships_Customers_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [Subscription].[Customers] ([Id]),
+    CONSTRAINT [FK_Memberships_Plans_PlanId] FOREIGN KEY ([PlanId]) REFERENCES [Subscription].[Plans] ([Id]),
+    CONSTRAINT [FK_Memberships_Users_CreatedBy] FOREIGN KEY ([CreatedBy]) REFERENCES [Security].[Users] ([Id]),
+    CONSTRAINT [FK_Memberships_Users_UpdatedBy] FOREIGN KEY ([UpdatedBy]) REFERENCES [Security].[Users] ([Id])
+);
+

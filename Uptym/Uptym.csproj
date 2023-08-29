@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+		<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+		<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+		<UserSecretsId>d73f7cdd-7c13-4a71-bb2d-1ccf5ea187bb</UserSecretsId>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <DebugSymbols>true</DebugSymbols>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="web.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+		<PackageReference Include="EntityFrameworkCore.Triggers" Version="1.2.2" />
+		<PackageReference Include="JsonModelBinder" Version="2.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
+		<PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Quartz" Version="3.2.3" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.6.0" />
+		<PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.5" />
+		<PackageReference Include="System.Net.WebSockets.Client" Version="4.3.2" />
+		<PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+		<PackageReference Include="Topshelf" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Uptym.Core\Uptym.Core.csproj" />
+	  <ProjectReference Include="..\Uptym.DTO\Uptym.DTO.csproj" />
+	  <ProjectReference Include="..\Uptym.Services\Uptym.Services.csproj" />
+	  <ProjectReference Include="..\Uptym.Validators\Uptym.Validators.csproj" />
+	</ItemGroup>
+</Project>

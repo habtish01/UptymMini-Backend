@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dashboard\TestNumberDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFrameworkCore.Triggers" Version="1.2.2" />
+    <PackageReference Include="Quartz" Version="3.2.3" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.5" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Metadata\Manufacturer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Uptym.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Uptym.Core\Uptym.Core.csproj" />
+  </ItemGroup>
+
+</Project>
